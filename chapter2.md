@@ -25,7 +25,7 @@ OK, we told you we have two letters in machine language. So, we need to convert 
 Imagine the word `hello` in English language. It has 4 characters. Also, imagine the number `42`, it has 2 digits. In computers, we need a fixed size, and our words can't we bigger or smaller than that. We call this fixed space **word size**. We need word size to compute carry digit, overflow and underflow, etc. One of the most popular word sizes, is a **byte**, which is made up of 8 bits. A simple byte is mapped like this :
 
 |7|6|5|4|3|2|1|0|
-|-|-|-|-|-|-|-|-|
+|-|:-:|:-:|:-:|:-:|:-:|:-:|-:|
 |0|0|0|0|0|0|0|0|
 
 Now, we initialized one byte using only zeros. But, we have two forms for a bit, zero or one. So, how can we convert a binary number to a decimal one?!
@@ -33,7 +33,7 @@ Now, we initialized one byte using only zeros. But, we have two forms for a bit,
 Now, let's take a look at a simple binary number for example : `1001`. This number is a 4 bit one, but we defined our word size 8 bits. We convert it to an 8 bit number, we just need to replace missing bits with zeros :
 
 |7|6|5|4|3|2|1|0|
-|-|-|-|-|-|-|-|-|
+|-|:-:|:-:|:-:|:-:|:-:|:-:|-:|
 |0|0|0|0|1|0|0|1|
 
 And now, we know column 3 and 0 have value one, it's so easy to calculate:
@@ -56,7 +56,7 @@ It's fine to convert binary numbers to decimal, but how can we convert a decimal
 So, we shall enter 1 in columns 7, 2, 1 and 0. Our result is just like this :
 
 |7|6|5|4|3|2|1|0|
-|-|-|-|-|-|-|-|-|
+|-|:-:|:-:|:-:|:-:|:-:|:-:|-:|
 |1|0|0|0|0|1|1|1|
 
 And yes! 10000111 is our result. And there's a qestion, is there any other formats for communicating with computers? Yes! We can use base 16, too. base 16 is known as hexadecimal, and we have digits 0 to F in that format. It's wierd, isn't it? 
