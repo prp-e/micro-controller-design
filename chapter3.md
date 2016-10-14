@@ -14,9 +14,9 @@ How do you add two decimal numbers? for example 105 and 55. This is how we add t
 
 We start from ones, then we add **carry** of ones to decimal. Now, we can do the same for 1100 and 0100. I know we have decided to use 8 bit word size, and so I draw 8 bits table now :
 
-|7 |6 |5 |4 |3 |2 |1 |0 |
-|---|:---:|:---:|:---:|:---:|:---:|---:|
-| | | |1|1| | | |
+|7  |6    |5    |4    |3    |2    |1    |0  |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|--:|
+|   |     |     |1    |1    |     |     |   |
 |0|0|0|0|1|1|0|0|
 |0|0|0|0|0|1|0|0|
 |0|0|0|1|0|0|0|0|
