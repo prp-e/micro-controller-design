@@ -56,7 +56,7 @@ It's fine to convert binary numbers to decimal, but how can we convert a decimal
 So, we shall enter 1 in columns 7, 2, 1 and 0. Our result is just like this :
 
 |7|6|5|4|3|2|1|0|
-|-|:-:|:-:|:-:|:-:|:-:|:-:|-:|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|---:|
 |1|0|0|0|0|1|1|1|
 
 And yes! 10000111 is our result. And there's a qestion, is there any other formats for communicating with computers? Yes! We can use base 16, too. base 16 is known as hexadecimal, and we have digits 0 to F in that format. It's wierd, isn't it? 
