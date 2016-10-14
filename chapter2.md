@@ -61,3 +61,46 @@ So, we shall enter 1 in columns 7, 2, 1 and 0. Our result is just like this :
 
 And yes! 10000111 is our result. And there's a qestion, is there any other formats for communicating with computers? Yes! We can use base 16, too. base 16 is known as hexadecimal, and we have digits 0 to F in that format. It's wierd, isn't it? 
 ### Hexadecimal world welcomes you
+Now, let's talk about digits. In base 10, we have 10 digits. In base 3, we have 3 digits, but what about 16? In base 16 we have sixteen digits. But how can we code our digits? It's so easy, we use Latin letters instead of numbers. This table, shows you a simple convertion among binary, decimal and hexadecimal :
+
+|Binary|Decimal|Hexadecimal|
+|------|:-----:|----------:|
+|0000  |0      |0          |
+|0001  |1      |1          |
+|0010  |2      |2          |
+|0011  |3      |3          |
+|0100  |4      |4          |
+|0101  |5      |5          |
+|0110  |6      |6          |
+|0111  |7      |7          |
+|1000  |8      |8          |
+|1001  |9      |9          |
+|1010  |10     |A          |
+|1011  |11     |B          |
+|1100  |12     |C          |
+|1101  |13     |D          |
+|1110  |14     |E          |
+|1111  |15     |F          |
+
+These are our digits, and we learned from this table that every 4 bit is equat to one hex digit. So, we can convert a decimal number to hexadecimal one using this table, and our knowledge of binary calculations. Let's think about 158. 158 is `128 + 30`. So, We can write this number like this :
+
+```
+2^7 + 2^4 + 2^3 + 2^2 + 2^1
+``` 
+And now, we can draw binary conversion table for this number like this :
+
+|7|6|5|4|3|2|1|0|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|---:|
+| 1  | 0    |0     |1     |1     |1     |1     |0    |
+
+Oh, 10011110, is our result. let's convert it hexadecimal! It has 8 bits, it means it has 2 digits in hexadecimal format. So, we draw a hexadecimal conversion table for this number :
+
+| 1 | 0 |
+|--------|--------:|
+|1001    |1110     |
+
+According to table, `100` is equal to 9, and `1110` is equal to E. So, our result is `9E`. 
+In this sections, we learned about how computer sees data. A computer reads data in binary format, but we simplify it by showing binary numbers in hexadecimal, and of course we translate hexadecimal instructions for computer later. 
+
+## Mathematics?
+We learned how to communicate with a computer, and now, we need to know how to do arithmetic operations using a computer. In next chapter, we just take a look at how a computer can do arithmetic operations. 
