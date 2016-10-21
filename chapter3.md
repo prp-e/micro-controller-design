@@ -102,3 +102,6 @@ And now, we do our addition :
 
 
 The carry is here normal, and every subtraction shall have one, now, we can do every subtraction with this method. The carry has a role now, we call it **Sign Flag** and when we want to design our final process core, we will consider a bit for this bit, too. In next chapter, we'll learn logical operations, which are very important in every computer. 
+
+## Now, what should we do?
+In our *proccess core* , we will use two's complement system, as the main system. Now, we need another type of operations, called *Logical Operations*. In next chapter, we learn logical operations. 
