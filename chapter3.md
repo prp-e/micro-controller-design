@@ -100,4 +100,5 @@ And now, we do our addition :
 |   |1    |1    |0    |1    |1    |1    |0    |0   |
 |1  |0    |1    |0    |1    |1    |0    |0    |1   |
 
-The carry is here normal, and every subtraction shall have one, now, we can do every subtraction with this method. The carry has a role now, we call it **Sing Flag** and when we want to design our final process core, we will consider a bit for this bit, too. In next chapter, we'll learn logical operations, which are very important in every computer. 
+
+The carry is here normal, and every subtraction shall have one, now, we can do every subtraction with this method. The carry has a role now, we call it **Sign Flag** and when we want to design our final process core, we will consider a bit for this bit, too. In next chapter, we'll learn logical operations, which are very important in every computer. 
