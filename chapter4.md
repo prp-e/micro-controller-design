@@ -1,0 +1,55 @@
+# Chapter 4 : Logical Operations
+Let's talk about logic! Do you know what logic is? Logic is somekind of mathematics, mixed with philosophy in simple word. It's started by Greek philosopher, *Aristotle*. Simply, logic says : **John is taller than Ali, Ali is taller than Ahmed, so, John is taller than Ahmed**. This was a very, very simple example of a logical problem in our daily life. We can do this example for everything measurable in our daily life, souch as area, height, weight, etc. 
+
+## How many logical operations we have?
+We have some simple logics, and we review all of them here, and we solve some simple problems, and create new logics. 
+### NOT
+As we have *binary* system, we use 0 for everything **off** and 1 for everything **on**. 0 for everything **true** and 1 for everything **false**. So, here we have just one variable called **A**. Let's do NOT operation on A!
+
+|NOT| A   | ~A |
+|---|:---:|---:|
+|   | 0   | 1  |
+|   | 1   | 0  |
+
+We show `NOT A` in this form :
+
+```
+~A
+```
+
+This notation, helps us write *logical functions*. Functions are operations we do on one or more variables, and it has unique answer per inputs from a bunch of variables. 
+### AND
+This operation, is very simple, but has two logic inputs. The table of AND is like this :
+
+|AND| A   | B   | Out |
+|---|:---:|:---:|----:|
+|   |0    |0    |0    |
+|   |0    |1    |0    |
+|   |1    |0    |0    |
+|   |1    |1    |1    |
+
+We show `A AND B` in our logical notation like this :
+
+```
+AB
+```
+
+### OR
+Of course, you remember famous question from Shakespear's novel Hamlet, **To be, or not to be; this is the question!**. Now, we're going to explain what OR is. This table can explain this operation :
+
+|OR | A   | B   |Out |
+|---|:---:|:---:|---:|
+|   |0    |0    |0   |
+|   |0    |1    |1   |
+|   |1    |0    |1   |
+|   |1    |1    |1   |
+
+One of operations needs to be **True**, and it makes whole answer true. 
+And, we show `A OR B` like this :
+```
+A + B
+```
+## Truth Table
+You saw, we used a table, which includes inputs and outputs, and also operation. This table is called **Truth Table**. 
+
+## Let's play a game!
