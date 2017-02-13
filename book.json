@@ -1,5 +1,12 @@
 {
     "plugins": [
         "download-pdf"
-    ]
+    ],
+    "pluginsConfig": {
+        "download-pdf": {
+            "base": "master",
+            "label": "Download PDF",
+            "multilingual": false
+        }
+    }
 }
