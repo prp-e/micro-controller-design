@@ -37,3 +37,18 @@ and get AND function. Just like this :
 But in reallity, if you remove the bubble from NAND gate, you will have AND : 
 
 ![Figure 6 - AND Gate](figures/ANDGate.png)
+
+### OR Gate 
+This is the last of these gates! Yes, this is the last, because we will design exclusive logics in next chapters, so the OR gate is the 
+last gate we will know here! If we apply two NOT gates in the inputs of a NAND gate, it'll become an OR gate. like this :
+
+![Figure 7 - OR using NAND and NOT](figures/ORNANDNOT.png)
+
+But, this is the actuall OR : 
+
+![Figure 8 - OR Gate](figures/ORGate.png)
+
+## Now, we're ready!
+Actually, when you know how to represent logic gates, and you know how their functions work, you can design and implement logical circuits. A computer
+is much simpler than you think, and the hard part in design and implementation of a computer, is the correct usage and combination of logics. In next chapter, 
+we design the simplest combinational circuits, and then we start desgining bigger ones. 
