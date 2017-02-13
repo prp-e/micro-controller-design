@@ -121,4 +121,4 @@ And we'll get this truth table :
 
 ## The journey to computer architecture!
 Now, we know logics, and we need to learn about **Logical Circuits**, which are representation of these logics in computer science and electronics. In next chapter, we will learn how to use and design simple logical circuits, and 
-then, we start designing and implementing our dear micro-controller. 
+then, we start designing and implementing our dear micro-controller.  Of course you needed these chapters to learn the computer language, but after learning the language, you need to know how a computer is built!
