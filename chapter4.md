@@ -83,3 +83,42 @@ It's `NOT(OR(A, B))` in a simple word. The truth table is like this :
 |    |  1  | 1   | 0  |
 
 Is there any more logics? of course yes! But, we will have a view on two others, in this chapter. 
+
+## Complex Logics 
+There are to other logics, which are made from other logics, I would like to call them "Complex". Because They're not as simple as NAND or NOR. 
+Also, we can call them "Exclusive Logics". This is what other engineers called them. 
+
+### Exclusive OR
+This logic, is implemented like this :
+```
+~AB + A~B
+```
+So, we will have a truth table like this :
+
+|XOR | A   | B   |Out |
+|----|:---:|:---:|---:|
+|    | 0   | 0   | 0  |
+|    | 0   | 1   | 1  |
+|    | 1   | 0   | 1  |
+|    | 1   | 1   | 0  |
+
+### Exclusive NOR 
+
+This logic is the same as XOR, but with a little difference! If you apply a NOT function to XOR, you'll get XNOR. But, the best implementation of XNOR is this function :
+
+```
+~A~B + AB
+```
+
+And we'll get this truth table :
+
+|XNOR | A   |  B  | Out |
+|---- |:---:|:---:|---: |
+|     | 0   | 0   | 1   |
+|     | 0   | 1   | 0   |
+|     | 1   | 0   | 0   |
+|     | 1   | 1   | 1   |
+
+## The journey to computer architecture!
+Now, we know logics, and we need to learn about **Logical Circuits**, which are representation of these logics in computer science and electronics. In next chapter, we will learn how to use and design simple logical circuits, and 
+then, we start designing and implementing our dear micro-controller. 
