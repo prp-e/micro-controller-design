@@ -27,3 +27,13 @@ The NOT gate is another simple and basic gate, you need to know. It's built usin
 Did you see how it works? Yes! We simply connect two inputs of a NAND gate to a switch. The NOT gate in general, is represented like this :
 
 ![Figure 4 - NOT Gate](figures/NOTGate.png)
+
+### AND Gate 
+As you remember from the previous chapter, we made NAND function by adding a NOT to AND. So, we know `~(~A) = A `. This means we can add a NOT gate in output of NAND, 
+and get AND function. Just like this : 
+
+![Figure 5 - AND Gate using NOT and NAND](figures/ANDNAND.png)
+
+But in reallity, if you remove the bubble from NAND gate, you will have AND : 
+
+![Figure 6 - AND Gate](figures/ANDGate.png)
