@@ -20,3 +20,10 @@ definition of NAND. When we want to show it on circuit, we use this shape :
 A D-shaped thing with a bubble at the end. This is NAND! You know how it works, because you read the [chapter four](chapter4.md) and you learned what are these functions!
 
 ### NOT Gate
+The NOT gate is another simple and basic gate, you need to know. It's built using a NAND Gate like this: 
+
+![Figure 3 - NOT using NAND Gate](figures/NOTNAND.png)
+
+Did you see how it works? Yes! We simply connect two inputs of a NAND gate to a switch. The NOT gate in general, is represented like this :
+
+![Figure 4 - NOT Gate](figures/NOTGate.png)
