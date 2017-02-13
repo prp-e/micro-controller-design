@@ -3,8 +3,11 @@ A microcontroller is a small computer, and usually *System on the Chip* (SoC), w
 ## What does a micro controller consist of? 
 In this section, I only explain process core, and in other chapters, we'll study other parts such as memory unit and I/O system. 
 The process core is usually made up of :
+
 1. **Arithmetic and Logical Unit**, also known as ALU. This unit, does every logical and Arithmetic operation, and it's the most important part of a microcontroller. 
+
 2. **Data Bus**, this part is simply a bunch of wires which transfers data between to parts of process core. 
+
 3. **Registers** are small memory blocks, and they can store data temporarily and transfer them. We always need them, because they're our temporary memory blocks and while we run a program, we need to store inputs and outputs.
 ## But, How do it know?! ... 
 OK, now let's talk about **How does even a computer know what we want?** . The answer is simple, for example, when we write this code for x86 family :
