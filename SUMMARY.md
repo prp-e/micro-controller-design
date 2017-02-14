@@ -6,3 +6,4 @@
 * [Chapter 3 : Arithmetic Operations](chapter3.md)
 * [Chapter 4 : Logical Operations](chapter4.md)
 * [Chapter 5 : Logical Circuits](chapter5.md)
+* [Chapter 6 : Combinational Circuits](chapter6.md)
