@@ -22,3 +22,19 @@ This is the XOR gate :
 This was the simplest combinational circuit we could ever make. Let's make another one!
 
 ## The Exclusive NOR 
+This is another combinational circuit we make in this chapter, the function is almost the same as XOR, but it has a little difference. 
+
+```
+~A~B + AB 
+```
+
+And now, we can make the circuit :
+
+![XNOR Circuit](figures/XNORCircuit.png)
+
+We also have a gate for this function. The gate looks like this :
+
+![XNOR Gate](figures/XNORGate.png)
+
+## More Logics? 
+Of course yes! We will make another useful logics in the next chapters. We all studied these six chapters for design and implementation of more logics. 
