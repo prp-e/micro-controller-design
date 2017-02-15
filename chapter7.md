@@ -54,4 +54,6 @@ Truth table of a full adder is like this :
 |      | 1          | 1   | 0   | 1           | 0      |
 |      | 1          | 1   | 1   | 1           | 1      |
 
-Now, we have ability of making a big adder! And that big adder will be our dear *Addition Machine*.      
+Now, we have ability of making a big adder! And that big adder will be our dear *Addition Machine*. 
+
+## Ripple-Carry adder     
