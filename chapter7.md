@@ -34,3 +34,24 @@ The truth table for this circuit will be :
 
 It makes 0, 1 and 2 for us! It's another interesting thing we can design and implement! but, it's not complete yet! Why? It does not make 3 for us, it has 2 inputs but not 4 outputs! 
 So, we still need some improvements on the circuit!
+
+## The Full Adder 
+Half adder is good, but it's not everything. Of course, it can't help us make bigger adders, so we need to connect two half adders, and make a new adder wich is called
+a **full adder**. A full adder, can actually make all expected outputs for us. This is the full adder :
+
+![Full Adder](figures/FullAdder.png)
+
+Truth table of a full adder is like this : 
+
+| F. A | Carry-in   | A   | B   | Carry(Cout) | Sum(S) |
+|------|:--------:  |:---:|:---:|:-----------:|:------:|
+|      | 0          | 0   | 0   | 0           | 0      |
+|      | 0          | 0   | 1   | 0           | 1      |
+|      | 0          | 1   | 0   | 0           | 1      |
+|      | 0          | 1   | 1   | 1           | 0      |
+|      | 1          | 0   | 0   | 0           | 1      |
+|      | 1          | 0   | 1   | 1           | 0      |
+|      | 1          | 1   | 0   | 1           | 0      |
+|      | 1          | 1   | 1   | 1           | 1      |
+
+Now, we have ability of making a big adder! And that big adder will be our dear *Addition Machine*.      
