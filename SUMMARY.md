@@ -5,7 +5,7 @@
  - [What we learn?](README.md#what-we-learn)
 * [Chapter 1 : What's a microcontroller?](chapter1.md)
  - [What does a microcontroller consist of?](chapter1.md#what-does-a-micro-controller-consist-of)
- - [But, How do it know?! ...](chapter1.md#but-how-do-it-know)
+ - [But, How do it know?! ...](chapter1.md#but-how-do-it-know-)
 * [Chapter 2 : How to talk to a computer](chapter2.md)
  - [The machine code](chapter2.md#the-machine-code)
  - [Everything Binary...](chapter2.md#everything-binary)
