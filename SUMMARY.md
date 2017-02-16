@@ -1,8 +1,8 @@
 # Summary
 
 * [Introduction](README.md)
-..* [Audience](README.md#Audience)
-..* [What we learn?](README.md#What%20we%20learn%20?)
+ - [Audience](README.md#audience)
+ - [What we learn?](README.md#what-we-learn)
 * [Chapter 1 : What's a microcontroller?](chapter1.md)
 * [Chapter 2 : How to talk to a computer](chapter2.md)
 * [Chapter 3 : Arithmetic Operations](chapter3.md)
