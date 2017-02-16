@@ -66,7 +66,7 @@ If we put one adder , and connect its carry-out to next one's carry-in, then I'l
 
 ![Ripple-Carry adder](figures/RippleCarry.gif)
 
-Not only 8 bits, we can make the adder with a custom word-size, according to the design of ripple-carry adder. Congratulations! You made you first computer! 
+Not only 8 bits, we can make the adder with a custom word-size, according to the design of ripple-carry adder. Congratulations! You made your first computer! 
 
 ## Let's talk about computers!
 In this chapter, we just designed and implemented a simple computer known as a *Ripple Carry Adder* or *Addition Machine*. It's a complete computer with a single instruction, but 
