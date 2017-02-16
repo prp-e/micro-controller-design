@@ -57,3 +57,18 @@ Truth table of a full adder is like this :
 Now, we have ability of making a big adder! And that big adder will be our dear *Addition Machine*. 
 
 ## Ripple-Carry adder     
+The full adder we've designed is actually one bit. If we want to design a computer with the word size of one bit, we can consider that 
+full adder as a simple computer. Now, as you remember from [chapter two](chapter2.md), we decided to make a microcontroller with word size 
+of eight bits! So, I want to make a 8-bit adder. But How?! 
+
+As you can see, each full adder has a carry-in and a carry-out pin, what we need is connecting 8 full adders together, and we need these pins. 
+If we put one adder , and connect its carry-out to next one's carry-in, then I'll get a *Ripple-Carry adder*. A ripple-carry adder looks like this :
+
+![Ripple-Carry adder](figures/RippleCarry.gif)
+
+Not only 8 bits, we can make the adder with a custom word-size, according to the design of ripple-carry adder. Congratulations! You made you first computer! 
+
+## Let's talk about computers!
+In this chapter, we just designed and implemented a simple computer known as a *Ripple Carry Adder* or *Addition Machine*. It's a complete computer with a single instruction, but 
+of course it's not functional yet. Because we didn't design a memory unit, a simple control unit, etc. In next chapter, we will add some memory blocks to this computer and then, we start
+designing a complete and **functional** computer.
