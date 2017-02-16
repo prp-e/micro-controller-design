@@ -17,7 +17,7 @@
  - [Addition](chapter3.md#addition)
  - [Subtraction](chapter3.md#subtraction)
    * [Sign/Modulus System](chapter3.md#signmodulus-system)
-   * [One's Complement System](chapter3.md#ones-complement-system)
+   - [One's Complement System](chapter3.md#ones-complement-system)
    * [Two's Complement System](chapter3.md#twos-complement-system)
    * [How to subtract](chapter3.md#how-to-subtract)
  - [Now, what should we do?](chapter3.md#now-what-should-we-do)
