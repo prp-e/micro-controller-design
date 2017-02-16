@@ -39,7 +39,7 @@
  - [NOT Gate](chapter5.md#not-gate)
  - [AND Gate](chapter5.md#and-gate)
  - [OR Gate](chapter5.md#or-gate)
- - [Now, we are ready!](chapter5.md#now-we-are-ready)
+ - [Now, we're ready!](chapter5.md#now-were-ready)
 * [Chapter 6 : Combinational Circuits](chapter6.md)
  - [The Exclusive OR](chapter6.md#the-exclusive-or)
  - [The Exclusive NOR](chapter6.md#the-exclusive-nor)
