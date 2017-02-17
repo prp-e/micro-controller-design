@@ -25,3 +25,13 @@ Consider that lovely NAND based implementation of SR, and if we modify that like
 
 I added two gates, and one pin. The new pin is called **enable**. It enables the circuit, that means I actually need to turn it on for applying
 all changes in the input! The new circuit is called  *SR flip-flop with enable*. Later, we will call that **Clocked SR**. 
+
+## Register
+We can consider this flip flop as *one bit memory block* or *one bit register*. But, as we decided in [chapter two](chapter2.md), we want 8 bits registers. 
+So, we need to connect eight memory blocks together! How is it possible? We just need to pick eight of them, then connect a common enable and reset button to them. 
+And the input (S pins) will be parallel. The schematics of a register, is like this :
+
+![SR based register](figures/8bitSR.png)
+
+This is the simplest register we can make, but we need a better design for our flip flops to prevent noises and oscillations! So, we don't use this kind of register in our 
+computer!
