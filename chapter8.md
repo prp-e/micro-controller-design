@@ -16,3 +16,12 @@ active-high, let's see active-high version of our flip flop :
 ![Active High SR flip flop](figures/SRFF-activehigh.png)
 
 As you can see, `Q` and `~Q` are replaced in the new circuit. It doesn't matter what kind of flip flop you use, but I actually prefer the active-high one. 
+
+## Basic Improvement
+
+Consider that lovely NAND based implementation of SR, and if we modify that like this : 
+
+![SR with enable](figures/ClockedSR.png)
+
+I added two gates, and one pin. The new pin is called **enable**. It enables the circuit, that means I actually need to turn it on for applying
+all changes in the input! The new circuit is called  *SR flip-flop with enable*. Later, we will call that **Clocked SR**. 
