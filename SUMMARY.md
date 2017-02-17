@@ -53,3 +53,4 @@
  - [Let's talk about computers!](chapter7.md#lets-talk-about-computers)
 * [Chapter 8 : Memory](chapter8.md)
  - [Everything is NAND](chapter8.md#everything-is-nand)
+ - [Basic Improvement](chapter8.md#basic-improvement)
