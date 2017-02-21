@@ -35,3 +35,24 @@ And the input (S pins) will be parallel. The schematics of a register, is like t
 
 This is the simplest register we can make, but we need a better design for our flip flops to prevent noises and oscillations! So, we don't use this kind of register in our 
 computer!
+
+## The new flip-flop 
+As we tested the S-R one, we found that S-R can't handle noises, and oscillations. This means we will have a lot of ___meta-stable___ conditions. 
+As a good solution, we can use this kind of flip-flop : 
+
+![D flip flop](figures/ClockedD.png)
+
+Now, we connect 8 bits to D inputs, and one Enabler to all E's we have. finally, we'll get this : 
+
+![D-based register](figures/Dregister.png)
+
+## The final register! 
+The schematics of a register, is just like this : 
+
+![Register](figures/register.png)
+
+It has 8-bit *data-in* or ___Din___ input and also *data-out* or ___Dout___ output. Also, it has an enabler, which is shown by *E*. 
+
+## What we need now? 
+Now, we need some organization for _memory management_. Also, we need to see how memory blocks work in action. In next chapters, we will add 
+some memory blocks to our *Addition Machine* and see how it works, then we design more memory devices for our micro-controller. 
