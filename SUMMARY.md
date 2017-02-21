@@ -55,3 +55,6 @@
  - [Everything is NAND](chapter8.md#everything-is-nand)
  - [Basic Improvement](chapter8.md#basic-improvement)
  - [Register](chapter8.md#register)
+ - [The new flip-flop](chapter8.md#the-new-flip-flop)
+ - [The final register!](chapter8.md#the-final-register)
+ - [What we need now?](chapter8.md#what-we-need-now)
