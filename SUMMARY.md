@@ -58,3 +58,4 @@
  - [The new flip-flop](chapter8.md#the-new-flip-flop)
  - [The final register!](chapter8.md#the-final-register)
  - [What we need now?](chapter8.md#what-we-need-now)
+* [Chapter 9 : Register File](chapter9.md)
