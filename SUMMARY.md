@@ -1,5 +1,6 @@
 # Summary
 
+* [License](LICENSE.md)
 * [Introduction](README.md)
  - [Audience](README.md#audience)
  - [What we learn?](README.md#what-we-learn)
