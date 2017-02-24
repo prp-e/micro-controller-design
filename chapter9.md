@@ -22,3 +22,12 @@ So, we can implement our decoder like this :
 ![2x4 Decoder](figures/2x4Decoder.png)
 
 But, how we use this in a *Register File* ? 
+
+## Simple Register File 
+We have a 2x4 decoder. So, for now we can make a simple register file with four registers. The outputs of decoder, 
+will be connected to *Enabler* pin of registers. Just like this : 
+
+![Simple Register File](figures/SimpleRegisterFile.png)
+
+This is actually not a good design, it can generate a lot of noises, so we need another device, which allows us to select 
+one of outputs! 
