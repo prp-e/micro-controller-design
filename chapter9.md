@@ -31,3 +31,17 @@ will be connected to *Enabler* pin of registers. Just like this :
 
 This is actually not a good design, it can generate a lot of noises, so we need another device, which allows us to select 
 one of outputs! 
+
+## The Multiplexer 
+You know, we need a device which acts like a decoder, but it does a selection among input data lines. This device is called 
+a *Multiplexer*. In this book, We call it **Mux**. A mux can be implemented using a decoder, and a bunch of AND/OR gates. Like this :
+This is a simple mux : 
+
+![Basic Mux](figures/BasicMux.png)
+
+For our register file, we need a mux which can handle 8 bits input and output. So, I connect 8 muxes together, and I'll have 
+a big mux like this : 
+
+![Expanded Mux](figures/ExpandedMux.png) 
+
+Now, we can go back and complete our register file. 
