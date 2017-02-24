@@ -62,3 +62,4 @@
 * [Chapter 9 : Register File](chapter9.md)
  - [The Decoder](chapter9.md#the-decoder)
  - [Simple Register File](chapter9.md#simple-register-file)
+ - [The Multiplexer](chapter9.md#the-multiplexer)
