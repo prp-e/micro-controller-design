@@ -61,3 +61,4 @@
  - [What we need now?](chapter8.md#what-we-need-now)
 * [Chapter 9 : Register File](chapter9.md)
  - [The Decoder](chapter9.md#the-decoder)
+ - [Simple Register File](chapter9.md#simple-register-file)
