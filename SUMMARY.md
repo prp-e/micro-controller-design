@@ -65,3 +65,4 @@
  - [The Multiplexer](chapter9.md#the-multiplexer)
  - [Advanced Register File](chapter9.md#advanced-register-file)
  - [Ready for Architecture!](chapter9.md#ready-for-architecture)
+* [Chapter 10 : Computer Architecture](chapter10.md)
