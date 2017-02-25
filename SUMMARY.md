@@ -64,3 +64,4 @@
  - [Simple Register File](chapter9.md#simple-register-file)
  - [The Multiplexer](chapter9.md#the-multiplexer)
  - [Advanced Register File](chapter9.md#advanced-register-file)
+ - [Ready for Architecture!](chapter9.md#ready-for-architecture)
