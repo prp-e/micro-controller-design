@@ -45,3 +45,17 @@ a big mux like this :
 ![Expanded Mux](figures/ExpandedMux.png) 
 
 Now, we can go back and complete our register file. 
+
+## Advanced Register File 
+
+Now, we add a mux to the register file we designed, so we get this : 
+
+![Advanced Register File](figures/AdvancedRegisterFile.png)
+
+S0 and S1 are selectors for *moving* data to registers. we call that situation **Store**. And R0 & R1 help us 
+*read* data from registers. This is what we call **Load**. We can claim that we have a ***Load/Store Architecture***. 
+
+## Ready for Architecture! 
+***Computer architecture*** is not only engineering. It includes mathematics, philosophy, analysis, etc. We need to combine
+all of them, to design an architecture. In next chapter, we will take a look on the philosophy behind computer architecture. 
+Then, we will start design and implementation of our microprocessor. 
