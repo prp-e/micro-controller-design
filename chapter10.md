@@ -35,4 +35,8 @@ A computer is measured by number of its instructions, so, when this number is le
 **RISC**. When we have more than 100 instructions in a computer, we call that ***Complex Instruction Set Computer*** or **CISC**. The computer we design in this book, will be 
 a RISC, because RISCs are easy to study, learn, implement and understand. Also, RISCs are faster than CISCs. 
 
+## Decisions! 
+In [chapter two](chapter2.md), we decided to design a computer with the word size of 8 bits. So, we need to make decisions about its architecture and organization. 
+Next chapter, will be about our design, and then, we start making our computer! 
+
 
