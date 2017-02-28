@@ -68,4 +68,5 @@
 * [Chapter 10 : Computer Architecture](chapter10.md)
  - [Computer Architecture](chapter10.md#computer-architecture)
  - [Backward Compatibility](chapter10.md#backward-compatibility)
+ - [Computer Organization](chapter10.md#computer-organization)
  - [Complex or Reduced? This is the question](chapter10.md#complex-or-reduced-this-is-the-question)
