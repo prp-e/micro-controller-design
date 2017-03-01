@@ -71,3 +71,4 @@
  - [Computer Organization](chapter10.md#computer-organization)
  - [Complex or Reduced? This is the question](chapter10.md#complex-or-reduced-this-is-the-question)
  - [Decisions!](chapter10.md#decisions)
+* [Chapter 11 : Design, Advanced Addition Machine! ](chapter11.md)
