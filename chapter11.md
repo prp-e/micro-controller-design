@@ -13,7 +13,5 @@ like this :
 
 ![Addition Machine - Step 0](figures/AdditionMachine-Step0.png)
 
-This is a good design now, but no! it's not good. One register file is enough for a simple calculator, and we wasted two of them. Also, 
-We can't store output in registers. Let's make new devices, which can help us build new things! 
+This is a good design now, but no! We can make it better, but that's enough for an ***Advanced Addition Machine***. 
 
-## The Decider
