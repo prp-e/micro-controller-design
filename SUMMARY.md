@@ -73,3 +73,5 @@
  - [Decisions!](chapter10.md#decisions)
 * [Chapter 11 : Design, Advanced Addition Machine! ](chapter11.md)
  - [Managing Inputs](chapter11.md#managing-inputs)
+ - [A new device?](chapter11.md#a-new-device)
+  * [Demultiplexer](chapter11.md#demultiplexer)
