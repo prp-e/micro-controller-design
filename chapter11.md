@@ -15,3 +15,12 @@ like this :
 
 This is a good design now, but no! We can make it better, but that's enough for an ***Advanced Addition Machine***. 
 
+## A new device?
+As we want only *one* register file, we need a multiplexer in the input. It looks like this : 
+
+![Addition Machine - Step 1](figures/AdditionMachine-Step1.png)
+
+So, for new system, we only waste four bits for control. But, we need a device which can help us define the path of our 
+data! A device which can be used for unicast (only one direction), multi-cast (more than one direction) and broadcast (sending data to all directions)!. 
+
+### Demultiplexer
