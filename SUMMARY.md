@@ -75,3 +75,5 @@
  - [Managing Inputs](chapter11.md#managing-inputs)
  - [A new device?](chapter11.md#a-new-device)
   * [Demultiplexer](chapter11.md#demultiplexer)
+ - [Selection!](chapter11.md#selection)
+ - [Temporary Registers](chapter11.md#temporary-registers)
