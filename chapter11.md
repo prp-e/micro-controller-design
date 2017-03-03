@@ -24,3 +24,26 @@ So, for new system, we only waste four bits for control. But, we need a device w
 data! A device which can be used for unicast (only one direction), multi-cast (more than one direction) and broadcast (sending data to all directions)!. 
 
 ### Demultiplexer
+
+A Demultiplexer acts like a backward multiplexer. With a multiplexer, you choose one of data lines, but with a demultiplexer, you 
+can send a single data line to a certain destination. The simplest one you can make, is a combination of NOTs and ANDs, like this :
+
+![Simple demux](figures/SimpleDemux.png)
+
+The input line, is connected to input of all ANDs, and *S*, which is our selector, connected with a NOT to first AND, and without NOT to 
+second one. This means, with applying changes in selector(s) we can send our data to different lines! Let's add some deumx's to our 
+***Advanced Addition Machine***. 
+
+## Selection!
+
+Now, we need to add an 8 bit demux to our Addition Machine. The input lines will look like this : 
+
+![Addition Machine - Step 2](figures/AdditionMachine-Step2.png)
+
+Now, we can select A or B inputs of the Adder! Let's add our adder : 
+
+![Addition Machine - Step 3](figures/AdditionMachine-Step3.png)
+
+This doesn't *add* anything, because we only switch our inputs? what's our final solution? 
+
+## Temporary Registers 
