@@ -47,3 +47,14 @@ Now, we can select A or B inputs of the Adder! Let's add our adder :
 This doesn't *add* anything, because we only switch our inputs? what's our final solution? 
 
 ## Temporary Registers 
+
+As you may find, there's no addition in our ***Advanced Addition Machine***. So, we can add two registers to our addition machine, and those are called 
+***Temprorary Registers***. Our machine, with temprorary registers will look like this : 
+
+![Addition Machine - Final Step](figures/AdditionMachine-Step4.png)
+
+## Let's go!
+
+Now, we designed a simple computer which can work, and it can help us make bigger machines or devices. But, in next chapter, we 
+start our design of a real micro-processor. The future chapters, help you understand architecture and organization of the computers 
+which we use everyday. 
