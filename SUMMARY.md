@@ -78,3 +78,4 @@
  - [Selection!](chapter11.md#selection)
  - [Temporary Registers](chapter11.md#temporary-registers)
  - [Let's go!](chapter11.md#lets-go)
+* [Chapter 11 : The Computer(Theory)](chapter12.md)
