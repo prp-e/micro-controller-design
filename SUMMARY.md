@@ -77,3 +77,4 @@
   * [Demultiplexer](chapter11.md#demultiplexer)
  - [Selection!](chapter11.md#selection)
  - [Temporary Registers](chapter11.md#temporary-registers)
+ - [Let's go!](chapter11.md#lets-go)
