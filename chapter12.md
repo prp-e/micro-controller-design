@@ -16,3 +16,37 @@ with an AND gate with inverted inputs, So we don't need to use both NOR and AND 
 * We should document every step of our design, because it's our ***Computer Organization***. And in final product, that's important to 
 be mentioned! 
 * The last tip is that we need to model everything we designed, later, we learn more about modeling. 
+
+### What Instructions we need? 
+
+As a *real* computer, we need a computer which can handle at least one **logical** and one **arithmetic** Instruction. So, We can make a computer with these instructions :
+* AND 
+* OR 
+* NAND 
+* NOR 
+* ADD (Addition)
+* SUB (Substract)
+
+So, we need to design a unit which can handle *Arithmetic and Logical* instructions. we call this unit ***Arithmetic and Logical Unit*** or ***ALU***. 
+
+## Computer Organization 
+
+This is the most difficult part, In this part you will learn how to think like an engineer! We know, Addition and Subtraction commands are 
+implemented by XOR and AND and NOT gates. But, what about NAND and NOR? We can implement NOR using an AND gate like this : 
+
+![NOR Using AND](figures/NORANDNOT.png)
+
+Also, we can implement NAND, using an OR gate like this : 
+
+![NAND Using OR](figures/NANDORNOT.png)
+
+## Memory Unit 
+
+I think, using a ***Read Only Memory*** or ***ROM*** is a good idea. But it's actually not! Because it can be programmed easily. So, we need another memory 
+block, which is known as ***Random Access Memory*** or ***RAM***. In this book, I never detail how to make a RAM or ROM, it makes this book too hard to understand 
+for people who have no idea about RAM or ROM. So, we know what kind of memory we have. 
+
+## Starting Implementation 
+In this chapter, we took a look on the theory side of designing a computer. But, as engineers, we need to join the darker side, and start implement 
+what we need. In the next chapter, We'll start design of our ALU, then start to connect other things we need to it, it'll be our awesome computer!
+
