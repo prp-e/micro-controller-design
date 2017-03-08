@@ -80,3 +80,7 @@
  - [Let's go!](chapter11.md#lets-go)
 * [Chapter 12 : The Computer(Theory)](chapter12.md)
  - [The Instruction Set](chapter12.md#the-instruction-set)
+  * [What Instructions we need?](chapter12.md#what-instructions-we-need)
+ - [Computer Organization](chapter12.md#computer-organization)
+ - [Memory Unit](chapter12.md#memory-unit)
+ - [Starting Implementation](chapter12.md#starting-implementation)
