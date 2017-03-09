@@ -84,3 +84,4 @@
  - [Computer Organization](chapter12.md#computer-organization)
  - [Memory Unit](chapter12.md#memory-unit)
  - [Starting Implementation](chapter12.md#starting-implementation)
+* [Chapter 13 : Arithmetic and Logical Unit](chapter13.md)
