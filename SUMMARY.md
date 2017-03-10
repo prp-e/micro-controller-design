@@ -86,3 +86,4 @@
  - [Starting Implementation](chapter12.md#starting-implementation)
 * [Chapter 13 : Arithmetic and Logical Unit](chapter13.md)
  - [Tools we need](chapter13.md#tools-we-need)
+ - [A note on schematics](chapter13.md#a-note-on-schematics)
