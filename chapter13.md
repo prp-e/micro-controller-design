@@ -14,3 +14,7 @@ It doesn't matter which operating system your computer runs, Windows, OS X, Linu
 is freely available. 
 Then, you need the most useful tool, [Logisim Evolution](https://github.com/reds-heig/logisim-evolution), a good logical simulation software, 
 which is free to use, distribute and advertise. All the schematics we designed in this book, are designed by this software. 
+
+## A note on schematics 
+In the book, we built a lot of devices ourselves. But, ***Logisim*** is pre-packaged with good and useful devices such as 
+Registers, Flip-Flops, Decoders, Multiplexers, etc. So, In this chapter and next chapters, we are going to use pre-made devices. 
