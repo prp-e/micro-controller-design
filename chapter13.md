@@ -24,8 +24,8 @@ In [chapter twelve](chapter12), we decided about our instructions. I want to ass
 ***Instruction Code*** or ***Operation Code***. We will have table like this at the end: 
 
 |Code  |Instruction|
-|:----:|:---------:|
-|      |           |
+|:-----------------------------------------:|:------------------------------------:|
+|   We put a hexadecimal/binary code here   |We put the instruction here           |
 
 But, we don't have any instructions right now, let's implement AND, our very first instruction : 
 
