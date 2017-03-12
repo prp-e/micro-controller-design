@@ -18,3 +18,30 @@ which is free to use, distribute and advertise. All the schematics we designed i
 ## A note on schematics 
 In the book, we built a lot of devices ourselves. But, ***Logisim*** is pre-packaged with good and useful devices such as 
 Registers, Flip-Flops, Decoders, Multiplexers, etc. So, In this chapter and next chapters, we are going to use pre-made devices. 
+
+## Start Point
+In [chapter twelve](chapter12), we decided about our instructions. I want to assign a code to each instruction, and that's called 
+***Instruction Code*** or ***Operation Code***. We will have table like this at the end: 
+
+|Code  |Instruction|
+|:----:|:---------:|
+|      |           |
+
+But, we don't have any instructions right now, let's implement AND, our very first instruction : 
+
+![ALU - Step 0](figures/final/ALU-0.png)
+
+Then, we need to add OR, but wait! Two outputs for one ALU? Is it possible? of course not! So, we use something called 
+a **Multiplexer**. So, I add a 4:1 mux, which is large enough to cover all we need! Then, I add the OR instruction, and we will 
+get something like this : 
+
+![ALU - Step 1](figures/final/ALU-1.png)
+
+Now, our table will be like this : 
+
+|S1   | S0  | Instruction |
+|:---:|:---:|:-----------:|
+| 0   | 0   | AND         |
+| 0   | 1   | OR          |
+
+And our microcontroller's ALU, can run two simple programs! 
