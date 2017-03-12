@@ -39,9 +39,20 @@ get something like this :
 
 Now, our table will be like this : 
 
-|S1   | S0  | Instruction |
+|S2   | S1  | Instruction |
 |:---:|:---:|:-----------:|
 | 0   | 0   | AND         |
 | 0   | 1   | OR          |
 
-And our microcontroller's ALU, can run two simple programs! 
+And our microcontroller's ALU, can run two simple programs! But this is not enough. You know, even the simplest processors classified as 
+RISC, such as MIPS, can do more than these two instructions. These are logical instructions, but we need at least one or two arithmetic instructions. 
+Lets add the instruction *ADD*. After adding that instruction, we will have this :
+
+| Cin | S2 | S1 | Instruction |
+|:---:|:--:|:--:|:-----------:|
+| 0   | 0  | 0  | AND         |
+| 0   | 0  | 1  | OR          |
+| 0   | 1  | 0  | ADD         |
+
+We actually don't need *Cin* in our instruction codes, because we won't use this ALU to do ***signed addition***. But, we will need that 
+for subtraction. 
