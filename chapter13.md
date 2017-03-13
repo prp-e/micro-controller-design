@@ -56,3 +56,50 @@ Lets add the instruction *ADD*. After adding that instruction, we will have this
 
 We actually don't need *Cin* in our instruction codes, because we won't use this ALU to do ***signed addition***. But, we will need that 
 for subtraction. 
+
+## More instructions? 
+
+As you know, we are going to make a computer which can do AND, OR, NAND, NOR, ADD and SUB. We implemented AND, OR and ADD. But, how can we 
+add NAND or NOR? We will a NOT gate, and a 2:1 multiplexer. This is how we can implement these two instructions :
+
+![ALU - Step 3](figures/final/ALU-3.png)
+
+Now we have a table like this :
+
+|Ainvert|Bnegate| S2 | S1 | Instruction |
+|:-----:|:-----:|:--:|:--:|:-----------:|
+|  0    |  0    | 0  |  0 | AND         |
+|  0    |  0    | 0  |  1 | OR          |
+|  1    |  1    | 0  |  0 | NOR         |
+|  1    |  1    | 0  |  1 | NAND        |
+|  0    |  0    | 1  |  0 | ADD         |
+
+Now, our ALU is almost complete, but we still don't have subtraction. Subtraction is a bit complex, there are a lot of different 
+ways to do subtraction, but we want a perfect way here. As you may remember from [chapter three](chapter3.md), we just suggested 
+***Two's Complement*** system for our dear computer. And you remember how that works! First, we need to invert all of the bits (1's become 0, 0's become 1), 
+then we add 1 unit to the inverted number. *Cin* works like a *plus one* button for us, and *Bnegate* inverts *B* for us. If we add an OR gate, 
+then we will have subtraction. Like this :
+
+![ALU - Step 4](figures/final/ALU-4.png)
+
+When *Bnegate* is high, automatically *Cin* becomes high on the adder. Now, we can have our ***Instruction Table*** like this : 
+
+|Ainvert|Bnegate| S2 | S1 | Instruction |
+|:-----:|:-----:|:--:|:--:|:-----------:|
+| 0     | 0     | 0  | 0  | AND         |
+| 0     | 0     | 0  | 1  | OR          |
+| 1     | 1     | 0  | 0  | NOR         |
+| 1     | 1     | 0  | 1  | OR          |
+| 0     | 0     | 1  | 0  | ADD         |
+| 0     | 1     | 1  | 0  | SUB         |
+
+We implemented the most simple ALU we could, and after some modifications, ALU module will look like this :
+
+![ALU - Appearance](figures/final/ALU-Module.png)
+
+I didn't remove *Cin* , because it will be needed when we want to expand our ALU (in following chapters, we will talk about expanding ALU)
+
+## Next Step 
+In these 13 chapters, we learned logic and design, and we've designed a simple ALU. But, ALU is not everything a computer needs. We need a simple 
+memory block, which can control programs, etc. So, In next chapter, we will learn how to define a program structure, and then we can add memory block 
+we need. At the end, we can really make our very own programmable microcontroller. 
