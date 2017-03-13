@@ -88,3 +88,4 @@
  - [Tools we need](chapter13.md#tools-we-need)
  - [A note on schematics](chapter13.md#a-note-on-schematics)
  - [Start Point](chapter13.md#start-point)
+ - [More instructions?](chapter13.md#more-instructions)
