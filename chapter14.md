@@ -34,7 +34,7 @@ STK SEGMENT
 STK ENDS
 
 DTS SEGMENT
-	TXT DB 'Hello, World!', 10, 13, '$'
+	TXT DB 'Piece of Art!', 10, 13, '$'
 DTS ENDS
 
 CDS SEGMENT
