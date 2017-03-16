@@ -90,3 +90,5 @@
  - [Start Point](chapter13.md#start-point)
  - [More instructions?](chapter13.md#more-instructions)
 * [Chapter 14 : Program Structure](chapter14.md)
+ - [Programming for a typical computer](chapter14.md#programming-for-a-typical-computer)
+ 
