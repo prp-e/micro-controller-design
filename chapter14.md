@@ -70,3 +70,42 @@ B8 0000
 
 Letter `B` stands for 4 bits, also 8 stands for 4 bits. We have 8 bits *Instruction Code* and 16 bits *hidden data* in 
 x86 family ***Object Code***. In this chapter, we actually decide for a simple object code for our microprocessor. 
+
+## Object Code 
+Now, we need to decide about a simple *Object Code* structure for our microcontroller. As I mentioned before, we won't 
+have a register file in our microcontroller and we directly read data from RAM. You may ask why, because we can keep it simple 
+for future developments and studies. Let's take a look at our *Instruction Table*, but this time, Hexadecimal : 
+
+| Instruction | Code |
+|:-----------:|:----:|
+| AND         | 0x0  |
+| OR          | 0x1  |
+| NOR         | 0xC  |
+| NAND        | 0xD  |
+| ADD         | 0x2  |
+| SUB         | 0x6  |
+
+Now, we need to upload our *Programs* to the microcontroller. But how? How it can detect the operands? This is a simple structure 
+I suggest for that : 
+
+| Instruction Code |  Input A   | Input B  |
+|:----------------:|:----------:|:--------:|
+| 4 bits           | 8 bits     | 8 bits   |
+
+We have a simple 20-bit object code for our microcontroller. Let's see if we want to add two numbers, for example 15 and 8, 
+how does it look like? It will be like this : 
+
+| Instruction Code |  Input A   | Input B  |
+|:----------------:|:----------:|:--------:|
+|    0x2           |   0x0f     | 0x08     |
+
+Now, we need to verify which bits are for which part. The most valuable bits can be for our instruction code, and others can be 
+for inputs. This is what I suggest : 
+
+| Instruction Code |  Input A   |  Input B  |
+|:----------------:|:----------:|:---------:|
+| Bits 16 - 19     | Bits 8 - 15| Bits 7 - 0|
+
+So, the code `0x20f08` is the correct object code for `ADD 15, 8`. 
+
+# The Final Step?
