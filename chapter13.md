@@ -89,7 +89,7 @@ When *Bnegate* is high, automatically *Cin* becomes high on the adder. Now, we c
 | 0     | 0     | 0  | 0  | AND         |
 | 0     | 0     | 0  | 1  | OR          |
 | 1     | 1     | 0  | 0  | NOR         |
-| 1     | 1     | 0  | 1  | OR          |
+| 1     | 1     | 0  | 1  | NAND        |
 | 0     | 0     | 1  | 0  | ADD         |
 | 0     | 1     | 1  | 0  | SUB         |
 
