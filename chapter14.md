@@ -109,3 +109,6 @@ for inputs. This is what I suggest :
 So, the code `0x20f08` is the correct object code for `ADD 15, 8`. 
 
 # The Final Step?
+Now we have ALU, and we will add RAM to our ALU. Then, we program it and enjoy! The book is almost finished, and there's nothing more 
+to say about the hardware side of a computer. But what about software and operating system? Be patient, we will take a look at 
+software and operating systems in following chapters!
