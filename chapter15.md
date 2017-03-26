@@ -18,3 +18,7 @@ our counter :
 
 It has a common *reset* pin, and a clock input. Also, it has a 4-bit output labled *Y*. This is the simplest binary counter 
 we can make. As it has four bits, it will count from 0 to 15 for us. This means we need a RAM block with 4-bit address bus. 
+An actual control unit is not that simple, usually it includes some decoders, multiplexers and AND gates to control and activate/deactivate 
+computer parts. But for our simple programmable computer, this one is enough!. 
+
+## Memory Unit 
