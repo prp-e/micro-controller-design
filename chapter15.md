@@ -11,4 +11,10 @@ define this unit. Control unit, controls programs loaded in our main memory, and
 control unit is made up of a device which is called *counter*. A counter is a register , or a bunch of registers which 
 can count! How? the counting process is controlled by *clock pulse*. But why is it important? A counter can store 
 address of a program, then its output can be input of the ***Address Bus*** of the RAM. This is the simplest use of 
-a counter in a computer. 
+a counter in a computer. But how can we make a counter? we can connect four D flip flops in this arrengement and make 
+our counter : 
+
+![The Counter](figures/final/TheCounter.png)
+
+It has a common *reset* pin, and a clock input. Also, it has a 4-bit output labled *Y*. This is the simplest binary counter 
+we can make. As it has four bits, it will count from 0 to 15 for us. This means we need a RAM block with 4-bit address bus. 
