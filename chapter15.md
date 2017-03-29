@@ -22,3 +22,9 @@ An actual control unit is not that simple, usually it includes some decoders, mu
 computer parts. But for our simple programmable computer, this one is enough!. 
 
 ## Memory Unit 
+We made a counter, which counts address for us. But, which address? Actually, we need a memory block like a RAM. If we look at RAM simply, 
+it's very similar to register file. But, an actual and functional RAM is much more different. Let's add the RAM :
+
+![RAM](figures/final/RAM.png)
+
+Now, we can store our programs in RAM! 
