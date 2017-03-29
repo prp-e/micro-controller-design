@@ -27,4 +27,39 @@ it's very similar to register file. But, an actual and functional RAM is much mo
 
 ![RAM](figures/final/RAM.png)
 
-Now, we can store our programs in RAM! 
+Now, we can store our programs in RAM! But wait, if you look closer at the picture above, you'll find that RAM is not connected 
+to the clock. So it won't work. This is what you actually need : 
+
+![RAM](figures/final/RAM1.png)
+
+Now, let's make the microcontroller! 
+
+# Combination of Things!
+We made a bunch of devices, connected them together and made new devices, and finally, we made ALU. Let's connect the ALU 
+to RAM. Remember this? 
+
+| Instruction Code | Operand A | Operand B |
+|:----------------:|:---------:|:---------:|
+| 4 bits           | 8 bits    | 8 bits    |
+
+And now, we need a special device which is called *Splitter* to split parts we need. Then, we will need smaller splitters 
+to split instruction code to bits. If you remember, we had this table for instruction codes : 
+
+|Ainvert|Bnegate| S2 | S1 | Instruction |
+|:-----:|:-----:|:--:|:--:|:-----------:|
+| 0     | 0     | 0  | 0  | AND         |
+| 0     | 0     | 0  | 1  | OR          |
+| 1     | 1     | 0  | 0  | NOR         |
+| 1     | 1     | 0  | 1  | NAND        |
+| 0     | 0     | 1  | 0  | ADD         |
+| 0     | 1     | 1  | 0  | SUB         |
+
+let's connect them together! And now, we have this : 
+
+![Microcontroller](figures/final/Microcontroller.png)
+
+## What should we learn now? 
+After reading these fifteen chapters, you learned how to make your very own computer in gate-level. Now, you can learn programming 
+and program your computer and test it, or you can learn digital electronics and make it in transistor-level. In following chapter, 
+we will take a quick look at *assembly* language of our microcontroller, and we try to make some programs we need. It will help you 
+understand how your real computer works!
