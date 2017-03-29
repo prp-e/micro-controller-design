@@ -1,1 +1,1 @@
-# Chapter 16 : Programming & Operating System
+# Chapter 16 : Programming and Operating System
