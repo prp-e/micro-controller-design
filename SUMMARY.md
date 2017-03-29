@@ -98,3 +98,5 @@
  - [Combination of Things](chapter15.md#combination-of-things)
  - [What should we learn now?](chapter15.md#what-should-we-learn-now)
 * [Chapter 16 : Programming and Operating System](chapter16.md)
+ - [Intel computers!](chapter16.md#intel-computers)
+ - [The assembler](chapter16.md#the-assembler)
