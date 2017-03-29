@@ -34,7 +34,7 @@ to the clock. So it won't work. This is what you actually need :
 
 Now, let's make the microcontroller! 
 
-# Combination of Things!
+## Combination of Things!
 We made a bunch of devices, connected them together and made new devices, and finally, we made ALU. Let's connect the ALU 
 to RAM. Remember this? 
 
