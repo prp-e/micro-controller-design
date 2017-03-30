@@ -100,3 +100,4 @@
 * [Chapter 16 : Programming and Operating System](chapter16.md)
  - [Intel computers!](chapter16.md#intel-computers)
  - [The assembler](chapter16.md#the-assembler)
+ - [The operating system](chapter16.md#the-operating-system)
