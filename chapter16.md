@@ -73,3 +73,23 @@ Yes, computer only understands one and zero (please re-study [chapter two](chapt
 a bunch of ones and zeros to make a computer work! But, computers actually need a good interface between the system and the user. What's that? 
 
 ## The operating system
+Operating System, is the interface! It connects the system to the user. Operating System is a software, which lets other software be installed 
+and ran on your computer. If you have a PC in home, it may run Windows or Linux as the operating system. If you have a Mac, it may run macOS. 
+And if you have an iPhone, it runs iOS. There are a lot of operating systems in the world, but a few operating systems are usable. Why? because 
+other ones are only made for a special purpose. For example, MINIX is made for educational purposes. If you want to learn how UNIX works, you can 
+study MINIX. But operating systems such as Linux, Windows or macOS are general-purpose. They're made to be the interface.And now you may ask , 
+will we write an operating system for our computer? Sorry, No! If you pay attention to our assembly code, you will find this line : 
+
+```
+MOV AH, 4Ch 
+INT 21h
+``` 
+The part including `INT` is actually an interrupt. We have no interrupts in our computer. This is the first problem. We also have no loops in our 
+computer, in instruction set, we didn't define anything to make a loop and any recursive structure. 8086 and many other *real* processors, usually 
+have instructions like `branch` or `jump`, and those instructions help us make real software, including operating systems! So, we never write operating 
+system for our little computer. 
+
+## Making a real computer?
+Now, you know a lot about computer architecture and organization. Also, you can make and program a computer in gate-level. This is necessary, trust me. 
+You always need to know how computers work, otherwise you won't be able to make software. But I'm sure you're curious about real hardware design. The next 
+chapter (and the last one!) is about that. You will learn how companies design and produce their own hardware. 
