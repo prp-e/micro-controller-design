@@ -47,3 +47,8 @@ transistors, which is called ***Very Large Scale Integration*** or in short, **V
 implementing a computer in real life. 
 
 ## Integrated Circuits 
+Imagine a rectangular black thing, which includes twenty transistors. This is actually an integrated circuit. Integrated circuits 
+are made up of tiny transistors, and they easily can be find in electronics stores. They integrated a lot of circuits on a piece of 
+semiconductor, connected metal legs to that, and covered with plastic, then you can buy them and use them in your projects. Also, IC's 
+classified by their technology. For example, you know 7400 series are TTL IC's, or 28 Series are EEPROM's. Anyway, there is one other way, 
+and you may find that the easiest way to join the dark side!
