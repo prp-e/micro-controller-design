@@ -105,3 +105,4 @@
  - [Digital Electronics](chapter17.md#digital-electronics)
  - [Integrated Circuits](chapter17.md#integrated-circuits)
  - [The last part!](chapter17.md#the-last-part)
+* [Bibliography](RESOURCES.md)
