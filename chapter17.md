@@ -30,4 +30,20 @@ current can move to the ground, but when it's low, current find another way to t
 RTL/TTL technologies are good, but later engineers found that ***Field Effect Transistors*** are better. Then, they decide to use 
 ***Metal Oxyde Semiconductor Field Effect Transistor***s or in short **MOSFET** transistors for their artworks! FETs have different 
 structure, but still can act as switch, and even better than BJTs. Also, they can be minimalized better. This is why a lot of digital 
-chips around us is made up of MOSFETs. 
+chips around us is made up of MOSFETs. MOSFETS are usually two types, nMOS, or ***Negative Channel*** and pMOS or ***Poisitive Channel***. 
+As engineers wanted the best performance, they just used both of them. When you use both nMOS and pMOS transistors, you actually used 
+***Complementary Metal Oxyde Semiconductor*** or *CMOS* technology. This is a CMOS inverter (or the same NOT gat):
+
+![CMOS Inverter](figures/CMOS-Inverter.png)
+
+Let's apply voltage on input, and see what happens! 
+
+![CMOS Waveform analysis](figures/CMOSWaves.png)
+
+As you can see, the result is very similar to TTL/RTL design. When you design a digital circuit, you should consider everything! Waste of power, 
+price, noise-resistance and size. For example, TTL is a good design as it's cheap and has good resistance against noise, but it's not as small as 
+we want. But CMOS is small enough to be on a chip! Also, there's a method for minimalizing CMOS designs, and implementation of more logics by less
+transistors, which is called ***Very Large Scale Integration*** or in short, **VLSI**. I think this is enough, let's take a look on other ways of 
+implementing a computer in real life. 
+
+## Integrated Circuits 
