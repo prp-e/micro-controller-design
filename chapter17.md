@@ -52,3 +52,23 @@ are made up of tiny transistors, and they easily can be find in electronics stor
 semiconductor, connected metal legs to that, and covered with plastic, then you can buy them and use them in your projects. Also, IC's 
 classified by their technology. For example, you know 7400 series are TTL IC's, or 28 Series are EEPROM's. Anyway, there is one other way, 
 and you may find that the easiest way to join the dark side!
+
+## Program The Hardware 
+There are some programming languages, which are called ***Hardware Description Language*** or in short, **HDL**. They're easy to use, 
+and they're actually similar to *C* or *Assembly* programming languages. One of my favorite HDL's is *Verilog*. I program an AND gate in 
+HDL like this : 
+
+```verilog 
+module AND(A, B, F);
+ input wire A;
+ input wire B;
+ output wire F;
+
+ assign F = A & B;
+
+endmodule
+```
+And for that, we need a ***Complex Programmable Logical Device***, CPLD or a ***Field-Programmable Gate Array***, FPGA. Those devices 
+have logical applications, but they have no logics, and we have to program them to make them functional. A lot of ligical simulator programs, 
+like *logisim* can generate Verilog or VHDL code of the designed logical circuit. And then, you can upload the code on your FPGA and have your 
+very own logical device. 
