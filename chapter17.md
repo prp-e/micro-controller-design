@@ -71,4 +71,10 @@ endmodule
 And for that, we need a ***Complex Programmable Logical Device***, CPLD or a ***Field-Programmable Gate Array***, FPGA. Those devices 
 have logical applications, but they have no logics, and we have to program them to make them functional. A lot of ligical simulator programs, 
 like *logisim* can generate Verilog or VHDL code of the designed logical circuit. And then, you can upload the code on your FPGA and have your 
-very own logical device. 
+very own logical device. And any other way to design and implement a real hardware? Of course there is a lot of other ways. But these ways are 
+the easiest ways to do that with a low-budget (not sure of this!) and basic knowledge of computers and electronics. 
+
+## The last part!
+This is the last part of the book! I tried to do my best for this one. Actually, this is my first English book, but I'm glad, because I could 
+share my knowledge and experiences. This book is written to make understanding a computer easier. First, I started it in Summer (2016) and it finished 
+in Spring (2017). About 8 or 9 months spent on this book, and I hope you enjoy!
