@@ -32,7 +32,7 @@ RTL/TTL technologies are good, but later engineers found that ***Field Effect Tr
 structure, but still can act as switch, and even better than BJTs. Also, they can be minimalized better. This is why a lot of digital 
 chips around us is made up of MOSFETs. MOSFETS are usually two types, nMOS, or ***Negative Channel*** and pMOS or ***Poisitive Channel***. 
 As engineers wanted the best performance, they just used both of them. When you use both nMOS and pMOS transistors, you actually used 
-***Complementary Metal Oxyde Semiconductor*** or *CMOS* technology. This is a CMOS inverter (or the same NOT gat):
+***Complementary Metal Oxyde Semiconductor*** or *CMOS* technology. This is a CMOS inverter (or the same NOT gate):
 
 ![CMOS Inverter](figures/CMOS-Inverter.png)
 
