@@ -1,4 +1,4 @@
-# Chapter 1 : What's a micro controller? 
+# Chapter 1 : What's a Microcontroller? 
 A microcontroller is a small computer, and usually *System on the Chip* (SoC), which include a processor core, memory unit and programmable input/output unit. The most famous family of microcontrollers is **AVR** or **Advanced Virtual RISC** family. This family of microcontrollers are used in boards such as [Arduino](http://arduino.cc), and they're used for industrial and educational purposes. A microcontroller, can control a toy car, and it also can control a US army drone. And this depends on microcontroller type, and the program we write for it. 
 ## What does a micro controller consist of? 
 In this section, I only explain process core, and in other chapters, we'll study other parts such as memory unit and I/O system. 
