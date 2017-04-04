@@ -1,5 +1,5 @@
 # Chapter 3 : Arithmetic Operations
-We do simple arithmetic operations in our daily life. For example, when you buy a candy for $2 , and you give the seller $5 banknote, he will give you $3. This is a simple subtraction we use in daily life. Or, if you want to buy a toy car for $100, and you have $80 in your pocket, you may go to bank and you will take $20 from your account. This is a simple addition and subtraction in daily life. But how a computer do that?! 
+We do simple arithmetic operations in our daily life. For example, when you buy a candy for $2 , and you give the seller $5 banknote, he will give you $3. This is a simple subtraction we use in daily life. Or, if you want to buy a toy car for $100, and you have $80 in your pocket, you may go to bank and you will take $20 from your account. This is a simple addition and subtraction in daily life. But how can a computer do that?! 
 
 In previous chapter, we talked about how computer reads data. We talked about binary digits. In this chapter, we take a look that addition and subtraction of them. 
 
