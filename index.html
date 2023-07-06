@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Microcontroller Design</title>
+<style>
+body {
+	font-family:  Arial;
+	background: ghostwhite;
+	border: 3px solid gainsboro;
+	border-radius: 15px;
+}
+
+pre code p {
+	border: 2px solid green;
+	border-radius: 10px;
+	width: 90%;
+}
+
+code.sgl {
+	background-color: gray;
+}
+
+table,tr,td {
+	border: .1px solid black;
+}
+
+blockquote {
+	background-color: darkgray;
+	width: 30%;
+	border: 1px solid grey;
+	border-radius: 2px;
+}
+
+</style>
+</head>
+<body>
+	<div>
+		<ol start="0">
+			<li></li>
+		</ol>
+	</div>
+	<div id="readme">
+		<span id="Introduction">
+			<h2>Introduction</h2>
+			<p>
+				I always wanted to design a micro-controller or micro-processor, so I managed to model them. Now, I've decided to show people how a micro-controller is designed.
+			</p>
+			<p>
+				I'm inspired by the book I've read <a href="https://www.amazon.com/But-How-Know-Principles-Computers/dp/0615303765">But How Do It Know? - The Basic Principles of Computer for Everyone</a> by <b>J. Clark Scott</b> and also studied MIPS, ARM and PowerPC architectures. So, in this book, I try to simplify a micro-processor and turn it to a micro-controller. 
+			</p>
+			<p id="Audience">
+				<h3>Audience</h3>
+				Of course you should be geek enough to read this book. Although I try to simplify topics,
+				but if you have knowledge of logical circuits or micro processors,
+				you'll understand this book easier. 
+			</p>
+			<p id="what_will_we_learn">
+				<h3>What will we learn?</h3>
+				<ol>
+					<li>
+						You'll understand how mankind communicated with machines for years
+						& the way people communicated with computers didn't change.
+					</li>
+					<li>
+						You start learning <i>Logical Circuits</i> which is base of computer architecture and organization.
+							<p style="font-size: 70%;">
+								importance of <i>Logical Circuits</i> knowledge is undeniable.
+								<br>
+								In all universities (at least Iran's) you must pass <i>Logical Circuits</i>
+								course before taking <i>Computer Architecture</i> course.
+							</p>
+					</li>
+					<li>
+						Once we learned <i>Logical Circuits</i>, we'll start to design simple circuits and even, computers, memory blocks, etc!
+					</li>
+					<li>
+						We'll combine everything we had previously designed and that will be our computer!
+					</li>
+					<li>
+					Finaly, we can program our computer, and we actually understood how a computer can understand human language.
+					</li>
+				</ol> 
+			</p>
+		</span>
+	</div>
+	<div id="LICENSE">
+		<h2>LICENSE</h2>
+		This book is published for free.
+		Everyone can use it as a source for non-commercial, educational and technical purposes. 
+	</div>
+	<div id="chapter1">
+		<span id="what_is_microcontroller">
+			<p>
+				<h2>What is a "micro-controller"?</h2>
+				A micro-controller is a small computer, usually <i>System on Chip (SoC)</i> which includes:
+				<ul>
+					<li>a processor core</li>
+					<li>memory unit</li>
+					<li>prgrammble I/O unit</li>
+				</ul>
+				The most famous family of micro-controllers is <i>AVR</i> (stands for: <i>Advanced Virtual RISC</i>). This family of micro-controllers are used in some educational boards (eg. <a href="https://arduino.cc">Arduino</a>) and are generally used for educational and industrial purposes.
+				<br>
+				A micro-controller is the brain of either a simple toy car or a U.S.A.F. drone (and more) depending on its type and the program we've written.
+			</p>
+			<p>
+				<h3>What does a microcontroller consist of??</h3>
+				In this section, I only explain process core, and in other chapters, we'll study other parts such as memory unit and I/O system.
+				<ol>
+					The process core is usually made up of:
+					<li>
+						<h5>Arithmetic and Logical Unit (ALU)</h5>
+						<p>
+							This unit, does every logical and arithmetic operation. It's the most important part of a microcontroller. 
+						</p>
+					</li>
+					<li>
+						<h5>Data Bus</h5>
+						<p>
+							This part is simply a bunch of wires which transfer data between two/different parts of process core. 
+						</p>
+					</li>
+					<li>
+						<h5>Registers</h5>
+						<p>
+							Registers are small memory blocks. They can store data temporarily and transfer them. We always need registers, because they're our temporary memory blocks and while we run a program, we need to store inputs and outputs.
+						</p>
+					</li>
+				</ol>
+			</p>
+			<p>
+				<h3>But, How does it know?! ... </h3>
+				OK, now let's talk about <i>How does even a computer know what we want?</i>
+				The answer is quite simple! for instance, when we write the following x86 family Assemby code:
+				<pre>
+					<code>
+						<p>
+MOV DX, OFFSET MSG
+MOV AH, 09
+INT 21H
+						</p>
+					</code>
+We assemble and run the code. it shows a message (e.g. <code class="sgl">Hello World!</code>).
+				</pre>
+				To Imagine: You're a tourist in Iran, you can understand Iranians by speaking Persian,
+				And Iranians can also communicate you in Persian. So, if we consider each computer a foreigner, we can communicate with them by Assembly language (Machine languages, preciser).
+				It's computers' language and we need to communicate with it in its own language.
+				<p>
+					 In this book, you'll find how can we generate a simple machine language, and we can do simple projects with our small computer, and enjoy!
+				</p>
+			</p>
+		</span>
+	</div>
+	<div id="chapter2">
+		<h2>How to talk to computer?</h2>
+		<p>
+			In previous chapter, we talked about how a computer can understand us. In this chapter, we learn how to communicate with our computer, and how to command it.
+			<pre>
+Let's take a look at a common *programming language*, for example, C++:
+				<code>
+					<p>
+<span style="color: crimson;">#include</span> &lt;iostream.h&gt;
+<span style="color: crimson;">using namespace</span> std;
+
+<span style="color: crimson;">int</span> main(){
+ cout << <span style="color: green;">"Hello, World!"</span> << endl;
+ <span style="color: crimson;">return</span> 0;
+}
+					</p>
+				</code>
+This is called a program and when we *compile* it, it turns to a file, usually named <code class="sgl">a.out</code>.
+Let's run our program:
+				<code>
+					<p>
+~:$ ./a.out
+Hello, World!
+~:$
+					</p>
+				</code>
+			</pre>
+			And now, we've communicated with our computer, but in a language similiar to ours.
+			This kind of programming languages are called <b>High Level</b> languages. They're close to human language, and they're easy to learn.
+		</p>
+		<p>
+			There are a lot of high level languages such as <i>C++</i>, <i>Python</i>, <i>Ruby</i>, <i>Go</i>, etc. We use them when we need.
+			For example, for coding a school project you may use C, or Go and to code a commercial project, you may use python, as it's easy to learn
+			and also have a lot of libraries.
+		</p>
+		<p>
+			But, what if you want to talk (code) directly to your hardware?! Now, we need a language which is close to machines'. 
+		</p>
+		<div id="machine_code">
+			<h3>The Machine Code</h3>
+			<p>
+				Machines are awesome, because they only use 0 and 1 to communicate with each other.
+				Humans are not as smart as computers in this case. we use a lots of letters/(phonemes in conversation) in daily communications.
+				English includes 26 letters, Persian includes 32 letters, and there are languages with more than 100 letters.
+				Computers have only two letters, <code class="sgl">0</code> and <code class="sgl">1</code>. Now, let's take a look at these letters!
+			</p>
+			<div id="everything_binary">
+				<h4>Everything binary</h4>
+				<p>
+					OK, we told you there is two letters in machine language. So, we need to convert usual letters and numbers to words that computer can understand.
+					We use <b>base 2</b> as a key to machine language. In base 10 - the regular format of daily mathematics - we have digits 0 through 9, but in base 2, we have only 0 and 1.
+					Every digit here is called a <i>binary digit</i> , or in short, a <b>bit</b>. But a single bit alone is not enough for us. 
+				</p>
+			</div>
+			<div id="word_size">
+				<h4>Word size</h4>
+				<p>
+					Imagine the word "Hello" in English language. It has 4 characters. Also, 
+					imagine the number "42", it has 2 digits. In computers, we need a fixed size,
+					and each word can't be bigger or smaller than that. We call this fixed space <b>word size</b>.
+					We need word size to compute carry digit, overflow and underflow, etc.
+				</p>
+				<p>
+					One of the most popular word sizes, is a <b>byte</b>, which is made up of 8 bits.
+					A simple byte is mapped like this:
+					<table>
+						<tr>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</table>
+					Now, we initialized one byte using only zeros, but, we have two forms for a bit, zero or one.
+					So, how can we convert a binary number to a decimal one?!
+				</p>
+			</div>
+			<div id="convertion">
+				<h4>Conversion, It's easy</h4>
+				<p>
+					Now, let's take a look at a simple binary number (e.g. <code class="sgl">1001</code>).
+					This number is a 4 bit one, but we defined our word size 8 bits.
+				</p>
+				<p>
+				In order to convert it to an 8 bit number, we just need to replace missing bits with zeros:
+				<table>
+					<tr>
+						<td>7</td>
+						<td>6</td>
+						<td>5</td>
+						<td>4</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+					</tr>
+				</table>
+				Now, we know column 3 and column 0 have value one, it's so easy to calculate the decimal value:
+				<br><code class="sgl" title="caret/circumflex^ mark means power">2^3 + 2^1 = 8 + 1 = 9</code>
+				</p>
+				<p>
+					It's fine to convert binary numbers to decimal, but how can we convert a decimal number to binary?
+					<br>let's try to convert 135 to binary. We all know 135 is equal to <code class="sgl">128 + 7</code>.
+					<p>
+						So, we can write this number like: 
+						<code class="sgl">2^7 + 2^2 + 2^1 + 2^0</code>
+					</p>
+					So, we shall enter 1 in columns 7, 2, 1 and 0. Our result is just like this:
+					<table>
+						<tr>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+					And Yes! 10000111 is our result.
+				</p>
+					<p>
+						But there's a question, is there any other format(s) to communicate with computers? Yes! We can use base 16, too.
+						base 16 is known as hexadecimal, and we have digits 0 through F in that format. It's weird, isn't it?
+					</p>
+				</p>
+			</div>
+			<div id="hexadecimal_world_welcomes_you">
+				<h4>Hexadecimal world welcomes you</h4>
+				<p>
+					Now, let's talk about digits. In base 10, we have 10 digits, In base 3, we have 3 digits, 
+					but what about 16? In base 16 we have 16 digits. But how can we code our digits? 
+					It's so easy, we use Latin letters instead of numbers.
+					<table>
+					This table, shows you a simple convertion among binary, decimal and hexadecimal:
+						<thead id="convertion_comparision_table_bin_dec_hex">
+							<td>Binary</td>
+							<td>Decimal</td>
+							<td>Hexadecimal</td>
+						</thead>
+						<tr>
+							<td>0000</td>
+							<td>00</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>0001</td>
+							<td>01</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>0010</td>
+							<td>02</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<td>0011</td>
+							<td>03</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>0100</td>
+							<td>04</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>0101</td>
+							<td>05</td>
+							<td>5</td>
+						</tr>
+						<tr>
+							<td>0110</td>
+							<td>06</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>0111</td>
+							<td>07</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td>1000</td>
+							<td>08</td>
+							<td>8</td>
+						</tr>
+						<tr>
+							<td>1001</td>
+							<td>09</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>1010</td>
+							<td>10</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td>1011</td>
+							<td>11</td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td>1100</td>
+							<td>12</td>
+							<td>C</td>
+						</tr>
+						<tr>
+							<td>1101</td>
+							<td>13</td>
+							<td>D</td>
+						</tr>
+						<tr>
+							<td>1110</td>
+							<td>14</td>
+							<td>E</td>
+						</tr>
+						<tr>
+							<td>1111</td>
+							<td>15</td>
+							<td>F</td>
+						</tr>
+					</table>
+					These are our digits.
+				</p>
+				<p>
+					We learned from this table that every 4 bit is equal to one hex digit. 
+					So, we can convert a decimal number to a hexadecimal one using this table, 
+					and our knowledge of binary calculations. Let's think about <code class="sgl">158</code>.
+					<br> 158 is <code class="sgl">128 + 30</code>. So, We can write this number like this:
+					<pre>
+						<code>
+							<p>
+2^7 + 2^4 + 2^3 + 2^2 + 2^1
+							</p>
+						</code>
+					</pre>
+					And now, we can draw binary conversion table for this number like this:
+					<table>
+						<tr>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+					Oh, 10011110 is our result.
+				</p>
+				<p>
+					Let's convert it to hexadecimal! It has 8 bits, 
+					it means it has 2 digits in hexadecimal format.
+					<table>
+						So, we draw a hexadecimal conversion table for this number:
+						<tr>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>1001</td>
+							<td>1110</td>
+						</tr>
+					</table>
+				</p>
+				<p>
+					According to the <a href="#convertion_comparision_table_bin_dec_hex">previous table</a>
+					<code class="sgl">1001</code> is equal to 9 and <code class="sgl">1110</code> is qual to E. 
+					So, our result is <code class="sgl">9E</code>.
+				</p>
+				<p>
+					In this sections, we learned about how computer sees data. 
+					A computer reads data in binary format, 
+					but we simplify it by showing binary numbers in hexadecimal, 
+					and of course, we translate hexadecimal instructions for computer later. 
+				</p>
+			</div>
+		</div>
+		<div>
+			<h3>Mathematics?</h3>
+			<p>
+				We learned how to communicate with a computer, and now, 
+				we need to know how to do arithmetic operations using a computer.
+			</p>
+			<p>
+				In next chapter, we just take a look at how a computer can do arithmetic operations. 
+			</p>
+		</div>
+	</div>
+	<div id="chapter3">
+		<h2>Arithmetic operations</h2>
+		<p>
+			We do simple arithmetic operations in our daily life.
+			For example, when you buy a candy for $2 , and you give the seller $5 banknote, he will give you $3. 
+			This is a simple subtraction we use in daily life. 
+			Or, if you want to buy a toy car for $100, and you have $80 in your pocket, you may go to bank and you will take $20 from your account. 
+			This is a simple addition and subtraction in daily life. But how a computer do that?! 
+		</p>
+		<p>
+			In previous chapter, we talked about how computer reads data. 
+			We talked about binary digits. 
+			In this chapter, we take a look at/that addition and subtraction of them. 
+		</p>
+		<div id="addition_chapter3">
+			<h3>Addition</h3>
+			<p>
+				How do you add two decimal numbers? for example 105 and 55. This is how we add these two numbers:
+				<table>
+					<tr>
+						<th>carry</th>
+						<td></td>
+						<td>1</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>number 1</th>
+						<td>1</td>
+						<td>0</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<th>+number2</th>
+						<td></td>
+						<td>5</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<th>result</th>
+						<td>1</td>
+						<td>6</td>
+						<td>0</td>
+					</tr>
+				</table>
+				We start from ones, then we add <b>carry</b> of ones to decimal. 
+				<p>
+				Now, we can do the same for 1100 and 0100. I know we have decided to use 8 bit word size, and so I've dran a 8 bits table:
+				</p>
+				<table>
+					<tr>
+						<!-- bits count -->
+						<th>bit number</th>
+						<td>7</td>
+						<td>6</td>
+						<td>5</td>
+						<td>4</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- carries -->
+						<th>carry</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>1</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<!-- first number -->
+						<th>first number</th>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- second number -->
+						<th>second one</th>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- result -->
+						<th>result</th>
+						<td>7</td>
+						<td>6</td>
+						<td>5</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</table>
+				Did you see, we used to empty bits for our carry.
+			</p>
+			<p>
+				If we use a smaller word size, this carry can't be displayed in output, and that will result an error. 
+				OK, we just did a simple addition. Let's talk about a bigger one, 11000000 and 01000000.
+				<table>
+					<tr>
+						<!-- bits count -->
+						<td>C</td>
+						<td>7</td>
+						<td>6</td>
+						<td>5</td>
+						<td>4</td>
+						<td>3</td>
+						<td>2</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- bits count -->
+						<td>1</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<!-- bits count -->
+						<td></td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- bits count -->
+						<td></td>
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<!-- bits count -->
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+				</table>
+				In column <b>C</b>, we've stored our carry.
+				This means, we need a word size bigger than 8 bits, if we care about the final result.
+				But, currently we don't care about it, and we just store it in a memory block called 
+				<b>Carry Flag</b>. we'll talk about it later.
+			</p>
+			<p>
+				Addition in binary is very, very easy. 
+				But, what about subtraction? we need a subtraction for our microcontroller, too. 
+				But how can we implement our subtraction?
+			</p>
+		</div>
+		<div id="substraction_chap3">
+			<h3>Subtraction</h3>
+			<p>
+				It's a bit difficult to do a subtraction in computers, because we have no subtraction circuit. 
+				We have <i>Negator</i> and <i>Adder</i> instead of subtractor.
+				So, we have different ways to make a number negative. 
+			</p>
+			<p>
+				I'll show you three popular ways, and at the end, we choose on of them as our standard. 
+			</p>
+			<div id="sign_modulus_sys">
+				<h4>Sign/Modulus System</h4>
+				<p>
+					In the first method, we have a sign bit, which is equal to the most valuable bit. 
+					If it's 1, number is negative, and if it's 0, number is positive.
+					<table>
+						Let's see an example, for example we convert 36 and -66 to a <span title="Sign/Modulus">S/M</span> number:
+						<thead>
+							<td>Decimal</td>
+							<td>Sign bit</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</thead>
+						<tr>
+							<td>36</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>-66</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+					Oh, let's think about this system. 
+				</p>
+				<p>
+					This system is very easy-to-use, but have two great problems:
+					<ol>
+						<li>It makes our word size smaller, as one of our bits wasted.</li>
+						<li>It makes negative zero condition, and we need to use algorithms designed for this system.</li>
+					</ol>
+					Algorithms to solve negative zero condition are not very popular, so we won't use S/M.
+				</p>
+			</div>
+			<div>
+				<h4>One's complement</h4>
+				<p>
+					There's another easy way, and it's called <b>One's complement</b>, the second method. 
+					<table>
+						In this system, we just invert bits. 
+						Every 0 becomes 1, and every 1 becomes 0. 
+						Let's calculate -36 in this system:
+						<thead>
+							<td>Decimal</td>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</thead>
+						<tr>
+							<td>36</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>-36</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+				</p>
+				<p>
+					This system is much better than S/M. but still have a great problem. 
+					It still makes negative zero, and it's not good for us. 
+					So, we have a final solution!
+				</p>
+			</div>
+			<div>
+				<h4>Two's complement</h4>
+				<p>
+					Our final solution is the third (and last) method: <b>Two's complement</b>.
+				</p>
+				<p>
+					This system is very similar to one's complement, 
+					but we just add 1 to one's complement, 
+					and it makes two's complement for us. 
+					<table>
+						Let's calculate -67 in this system:
+						<thead>
+							<td>Description</td>
+							<td>Decimal</td>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</thead>
+						<tr>
+							<td>to binary</td>
+							<td>67</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Inverted</td>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>Add with 1</td>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Result</td>
+							<td>-67</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+					</table>
+					In this system, we have no negative zero conditions, and all bits are used efficiently.
+				</p>
+				<p>
+					Now, we have chosen this system as our standard, 
+					and we'll design our subtraction parts using this system.
+				</p>
+			</div>
+			<div id="how_to_subtract">
+				<h4>How to Subtract?</h4>
+				<p>
+					OK, now we are able to make negative numbers. 
+					So, a subtraction operation is simply <i>addition of a number, to a negative number</i>. 
+					<pre>
+So, for example:
+						<code>
+							<p>
+125 - 36 <span style="color: gray;">is actually equivalent to</span> 125 + (-36)
+							</p>
+						</code>
+					</pre>
+					<table>
+						So, first, we calculate -36:
+						<thead>
+							<td>Decimal</td>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</thead>
+						<tr>
+							<td>36</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>-36</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+					</table>
+					<br>
+					<table>
+						And now, we do our addition:
+						<thead>
+							<td>Decimal</td>
+							<td>Carry</td>
+							<td>7</td>
+							<td>6</td>
+							<td>5</td>
+							<td>4</td>
+							<td>3</td>
+							<td>2</td>
+							<td>1</td>
+							<td>0</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+						</tr>
+						<tr>
+							<td>125</td>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>		
+						</tr>
+						<tr>
+							<td>-36</td>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+					</table>
+					The carry is normal here, and every subtraction have one, 
+					now, we can do every subtraction with this method.
+				</p>
+				<p>
+					The carry has a role now, we call it <b>Sign Flag</b> 
+					and when we want to design our final process core, 
+					we will consider a bit for this bit, too. 
+				</p>
+				In next chapter, we'll learn logical operations, which are very important in every computer. 
+			</div>
+		</div>
+		<div id="what_should_we_do_chap3">
+			<h3>Now, what should we do?</h3>
+			<p>
+				In our <i>process core</i> , we will use two's complement system as the main system. 
+				Now, we need another type of operations, called <i>Logical Operations</i>. 
+			</p>
+			<p>
+				In next chapter, we'll learn logical operations, which are very important in every computer.
+			</p>
+		</div>
+	</div>
+	<div id="chapter4">
+		<h2>Logical Operations</h2>
+		<p>
+			Let's talk about logic! Do you know what logic is? 
+			Logic is somekind of mathematics, mixed with philosophy in simple word. 
+			It's started by Greek philosopher, <i>Aristotle</i>. Simply, logic says: 
+ 			<b>John is taller than Ali, Ali is taller than Ahmed, so, John is taller than Ahmed</b>. 
+			This was a very, very simple example of a logical problem in our daily life. 
+			We can do this example for everything measurable in our daily life, souch as area, height, weight, etc.
+		</p>
+		<div id="how_many_log_op_we_has">
+			<h3>How many logical operations do we have?</h3>
+			<p>
+				We have some simple logics, and we review all of them here, and we solve some simple problems, and create new logics.
+			</p>
+			<div>
+				<h4>NOT</h4>
+				<p>
+					As we have <i>binary</i> system, we use 0 for everything <b>off</b> and 1 for everything <b>on</b>. 
+					0 for everything <b>true</b> and 1 for everything <b>false</b>. 
+					So, here we have just one variable called <b>A</b>.
+					<table>
+						Let's do `NOT` operation on <b>A</b>!
+						<thead>
+							<td>NOT</td>
+							<td>A</td>
+							<td>~A</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+					We show <code class="sgl">NOT A</code> in the form <code class="sgl">~A</code>.
+				</p>
+				<p>
+					This notation, helps us write <b>logical function</b>s. 
+					<p>
+						(Functions are operations we do on one or more variables, and
+						it has unique answer per inputs from a bunch of variables.)
+					</p>
+				</p>
+			</div>
+			<div>
+				<h4>AND</h4>
+				<p>
+					This operation, is very simple, but has two logic inputs.
+					<table>
+						The table of AND is like this:
+						<thead>
+							<td>AND</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+					We show <code class="sgl">A AND B</code> in logical notation in the form <code class="sgl">AB</code>.
+				</p>
+			</div>
+			<div>
+				<h4>OR</h4>
+				<p>
+					Of course, you remember famous question from Shakespear's novel Hamlet:
+					<blockquote>To be, or not to be; this is the question!</blockquote>
+					Now, we're going to explain what OR is.
+					<table>
+						This table can explain this operation
+						<thead>
+							<td>OR</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+					One of operands need to be <b>True</b> and it makes whole answer <b>True</b>.
+				</p>
+				<p>
+					we show <code class="sgl">A OR B</code> in the form <code class="sgl">A+B</code>.
+				</p>
+			</div>
+		</div>
+		<div>
+			<h3>Truth Table</h3>
+			<p>
+				You saw, we used a table, which includes operation, operands and output. This table is called <b>Truth Table</b>.
+			</p>
+		</div>
+		<div>
+			<h3>Let's play a game!</h3>
+			<p>
+				So, let's combine some logics and make new ones! The simplest ones are:
+			</p>
+			<div>
+				<h4>NAND</h4>
+				<p>
+					It means <code class="sgl">~(AB)</code> - it's <code class="sgl">NOT(AND(A, B))</code> in simple words.
+					<table>
+						NAND Truth Table
+						<thead>
+							<td>NAND</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</p>
+			</div>
+			<div>
+				<h4>NOR</h4>
+				<p>
+					It means <code class="sgl">~(A+B)</code> - it's <code class="sgl">NOT(OR(A, B))</code> in a simple word.
+					<table>
+						NOR Truth Table
+						<thead>
+							<td>NOR</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</p>
+				<p>
+					Is there any more logics? of course yes! But, we will have a view on only two others, in this chapter. 
+				</p>
+			</div>
+		</div>
+		<div>
+			<h3>Complex logics</h3>
+			<p>
+				There are to other logics, which are made from other logics, I would like to call them <i>"Complex
+				Logic"</i>s because They're not as simple as AND or OR. Also, we can call them <i>"Exclusive Logic"</i>s. 
+				This is what other engineers called them!  
+			</p>
+			<div>
+				<h4>eXclusive OR</h4>
+				<p>
+					XOR is implemented as <code class="sgl">~AB + A~B</code>.
+					<table>
+						eXclusive OR (XOR) truth table
+						<thead>
+							<td>XOR</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+					</table>
+				</p>
+			</div>
+			<div>
+				<h4>eXclusive NOR</h4>
+				<p>
+					This logic is the same as XOR, but with a little difference!
+					if you apply NOT function to XOR, you'll get XOR. However, the
+					best implementation of XNOR is <code class="sgl">~A~B + AB</code>
+					<table>
+						XNOR Truth Table
+						<thead>
+							<td>XNOR</td>
+							<td>A</td>
+							<td>B</td>
+							<td>Out</td>
+						</thead>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>0</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>0</td>
+							<td>1</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+					</table>
+				</p>
+			</div>
+		</div>
+		<div>
+			<h3>The Journey to Computer Architecture!</h3>
+			<p>
+				Now, we know logics, and we need to learn about <b>Logical Circuits</b>, 
+				which are representation of these logics in computer science and electronics.
+			</p>
+			<p>
+				In the next chapter, we will learn how to use and design simple logical circuits.
+				After that, we'll start to design and implement our dear micro-controller.  
+			</p>
+			<p>
+				Of course you must have read these chapters to learn the computer language.
+				 but after learning the language, you need to know how a computer is built!
+			</p>
+		</div>
+	</div>
+</body>
+<footer>
+	<h3>Biblography</h3>
+	<ul>
+		<p>
+			<a href="https://www.amazon.com/But-How-Know-Principles-Computers/dp/0615303765">J.Clark Scott: But How Do It Know? - The Basic Principles of Computer for Everyone</a>
+		</p>
+		<p>
+			<a href="https://www.amazon.com/Computer-Organization-Design-Fourth-Architecture/dp/0123747503">Davide Patterson, John Henessy &Morgan Kaufman: Computer Organization and Design, The Hardware/Software Interface, Revised Fourth Edition</a>
+		</p>
+		<p>
+			<a href="https://www.amazon.com/Logic-Computer-Design-Fundamentals-5th/dp/0133760634">Morris Mano: Logic and Computer Design Fundamentals, Fifth Edition</a>
+		</p>
+		<p>
+			<a href="https://www.amazon.com/Digital-Design-Introduction-Verilog-HDL/dp/0132774208">Moris Mano: Digital Design: With an Introduction to the Verilog HDL</a>
+		</p>
+	</ul>
+</footer>
+</html>
